@@ -20,6 +20,12 @@ let cpuStarCount = 3;
 //CPU変更、初期表示読み込み用
 cpuChange(cpu1Cards);
 
+//効果音
+const soundJanken = new Audio("sound/janken.wav");
+const soundWin = new Audio("sound/win.wav");
+const soundLose = new Audio("sound/lose.wav");
+const soundDraw = new Audio("sound/draw.wav");
+
 //ゲームの主要処理
 // じゃんけんの勝敗判定。playerHandの引数にボタンで設定したguなどの値を代入
 async function playJanken(playerHand) {
@@ -39,6 +45,9 @@ async function playJanken(playerHand) {
   document.querySelector("#voice").innerHTML = "　";
   // 掛け声の表示
   displayStrings(strArr);
+  //じゃんけんの効果音
+  soundJanken.currentTime = 0;
+  soundJanken.play();
   //じゃんけんが始まるまでストップ
   await sleep(3500);
 
@@ -252,19 +261,25 @@ function cpuChangeImg(a) {
 // 勝敗判定
 function determineWinner(playerHand, computerHand) {
   if (playerHand === computerHand) {
+    soundDraw.currentTime = 0;
+    soundDraw.play();
     return "引き分け";
   } else if (
     (playerHand === "gu" && computerHand === "choki") ||
     (playerHand === "choki" && computerHand === "pa") ||
     (playerHand === "pa" && computerHand === "gu")
   ) {
+    soundWin.currentTime = 0;
+    soundWin.play();
     starCount++; //星の増加
     cpuStarCount--;
     return "あなたの勝ち";
   } else {
+    soundLose.currentTime = 0;
+    soundLose.play();
     starCount--; //星の減少
     cpuStarCount++;
-    return "相手の勝ち";
+    return "あなたの負け";
   }
 }
 
