@@ -1,7 +1,7 @@
 # 課題　 -限定ジャンケンアプリ-
 
 ## DEMO
-https://w-baby-y.github.io/kadai01/
+https://w-baby-y.github.io/kadai02/
 
 ## ①課題内容
 - 賭博黙示録カイジで用いられた限定ジャンケンを模したアプリ。ルールとしては以下の通り
