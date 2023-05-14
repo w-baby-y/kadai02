@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>限定ジャンケン</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sp.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no"
+    />
+    <!-- <link rel="stylesheet" href="css/reset.css" /> -->
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="game-title">
+        <h1>限定ジャンケン</h1>
+      </div>
+      <div class="cpu-state-container">
+        <div class="cpu-star-container">
+          <h2>相手の星</h2>
+          <div id="cpu-stars-container">
+            <img class="star" src="img/star.png" alt="" />
+            <img class="star" src="img/star.png" alt="" />
+            <img class="star" src="img/star.png" alt="" />
+          </div>
+        </div>
+        <div id="cpu-img">
+          <img src="img/cpu0.png" alt="" />
+        </div>
+        <div id="cpu-card">
+          <h2>相手のカード数</h2>
+          <img src="img/card.png" alt="" />
+          <div id="computer-cards"></div>
+        </div>
+      </div>
+      <div class="result-container">
+        <h2>いざ勝負！</h2>
+        <div id="voice">　</div>
+        <div id="result">　</div>
+        <div id="gameEnd">　</div>
+      </div>
+      <div class="player-state-container">
+        <div id="player-star-container">
+          <h2>あなたの星</h2>
+          <!-- <div id="point">スコア： 3点</div> -->
+          <div id="stars-container">
+            <img class="star" src="img/star.png" alt="" />
+            <img class="star" src="img/star.png" alt="" />
+            <img class="star" src="img/star.png" alt="" />
+          </div>
+        </div>
+        <div id="player-img">
+          <img src="img/player.png" alt="" />
+        </div>
+        <div id="player-card">
+          <h2>あなたの手</h2>
+          <button id="gu-btn" onclick="playJanken('gu')">
+            <img src="img/gu.png" alt="" /><br />グー（残り:<span id="gu-count"
+              >4</span
+            >枚）
+          </button>
+          <button id="choki-btn" onclick="playJanken('choki')">
+            <img src="img/ch.png" alt="" /><br />チョキ（残り:<span
+              id="choki-count"
+              >4</span
+            >枚）
+          </button>
+          <button id="pa-btn" onclick="playJanken('pa')">
+            <img src="img/pa.png" alt="" /><br />
+            パー（残り:<span id="pa-count">4</span>枚）
+          </button>
+          <br /><br />
+          <button id="cpuChange" onclick="cpuChange(cpu1Cards)">
+            相手を変更
+          </button>
+          <!-- http://lmsnn.fc2web.com/material/janken.html -->
+        </div>
+      </div>
+      <h2>ルール</h2>
+      <ul>
+        <li>
+          参加者はそれぞれ3つの星とグー、チョキ、パーが描かれたカードを4枚ずつ計12枚が与えられる。<br />
+          参加者はこのカードを用い、他の参加者とじゃんけん勝負を行い、勝てば相手の星を1つ手に入れる事が出来る。<br />
+          あいこの場合は星の移動はない。
+        </li>
+        <li>【勝利条件】全てのカードを使い切った時点で星が3つ以上あること</li>
+        <li>【敗北条件】星が0になってしまうこと</li>
+      </ul>
+    </div>
+    <!-- <button id="openModal">Open modal</button> デバック用-->
+    <section id="modalArea" class="modalArea">
+      <div id="modalBg" class="modalBg"></div>
+      <div class="modalWrapper">
+        <div class="modalContents"></div>
+      </div>
+    </section>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="js/game.js"></script>
+  </body>
+</html>
