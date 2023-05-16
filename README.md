@@ -6,6 +6,7 @@ https://w-baby-y.github.io/kadai02/
 ## ①課題内容
 - 限定ジャンケンのリッチバージョン
 - なお、今後の制作にむけてpythonを学習し、手書き数字認識アプリをつくった　https://github.com/w-baby-y/pyNumPredict
+- 　また、ゲームエンジンを使ってみたかったので、Phaser3というライブラリを使ってゲームを作ったhttps://github.com/w-baby-y/phaser3ActionGame
 
 ## ②工夫した点・こだわった点
 - レスポンシブデザイン対応した点
